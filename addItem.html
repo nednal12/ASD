@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- Project: MIU Week 2 -->
+<!-- Name: Brent Marohnic -->
+<!-- Term: 1208 -->
+<!-- Date: 2012-08-09 -->
+
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="keywords" content="Vehicle Service Tracker App" />
+		<meta name="description" content="Keep your vehicles properly serviced" />
+		<meta name="robots" content="index, follow" />
+		<title>Maintenance Tracker</title>
+		
+		
+		<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<!-- Mobile IE needs ClearType for smoothing fonts -->
+		<meta http-equiv="cleartype" content="on">
+	
+		<!-- StyleSheets under here -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<link rel="stylesheet" href="css/themes/GoldApp.css"/>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+		<script src="js/libs/modernizr.custom.min.js"></script>
+
+	</head>
+	<body>
+	
+	<!--  ------------------------------------------- Intial Page ------------------------------------------------------- -->
+	<div data-role="page" id="addItem" data-add-back-btn="true" data-theme="a" data-content-theme="c">
+		<div id="branding">
+			<img src="images/branding.gif" class="ui-btn-left" />
+		</div>
+		<div data-role="header" class="header">
+			<div>
+				<a id="goBack" href="index.html" data-ajax="false" class="ui-btn-left" data-role="button" data-inline="true" data-icon="arrow-l" data-iconpos="left" data-transition="slide">Back</a>
+			</div>
+			<p id="page2Header">Maintenance Tracker</p>
+			
+		</div>
+		
+		<div data-role="content">
+		
+		<form id="bigForm" name="bigForm" action="#" method="post">
+			<fieldset data-role="fieldcontain">
+				<label>* Denotes a required field</label>
+				<legend>Vehicle Information</legend>
+				
+					<label for="owner">* Owner:</label>
+					<input type="text" id="owner" name="owner" data-mini="true" class="required"/>
+					
+					<div id="carMake" name="carMake">
+						<label for="allMakes">Make:</label> 
+						<select id="allMakes" name="allMakes" data-mini="true" data-native-menu="false" class="required">
+							<option value="none" data-placeholder="true" class="required">--- Select Make ---</option>
+							<option value="Chevy" class="required">Chevy</option>
+							<option value="Chrysler">Chrysler</option>
+							<option value="Ford">Ford</option>
+							<option value="Jeep">Jeep</option>
+							
+						</select> 
+					</div>
+					
+					<label for="carModel">* Model:</label>
+					<input type="text" id="carModel" name="carModel" data-mini="true" class="required"/>
+					
+					<label for="carMileage">* Approximate Mileage:</label>
+					<input type="number" id="carMileage" name="carMileage" min="30000" max="300000" step="5000" data-mini="true" class="required number"/>
+					
+					<fieldset data-role="controlgroup" data-mini="true">
+						<legend>Transmission:</legend>
+						
+							<input type="radio" checked="checked" value="Automatic" id="automatic" name="transmission" />
+							<label for="automatic">Automatic</label>
+							
+							<input type="radio" value="Manual" id="manual" name="transmission" />
+							<label for="manual">Manual</label>
+						
+					</fieldset>
+					
+					<div data-role="fieldcontain">
+						<label for="carCondition">Condition:</label>
+						<input type="range" id="carCondition" name="carCondition" value="5" min="1" max="10" data-highlight="true" data-mini="true"/>
+					</div>
+			
+			</fieldset>
+			<fieldset>
+				<legend>Maintenance</legend>
+				
+					<fieldset data-role="controlgroup" data-mini="true">
+						<legend>For which services would you like to be reminded:</legend>
+						
+						<input type="checkbox" checked="checked" value="Oil and Filter" id="oilAndFilter" name="oilAndFilter" />
+						<label for="oilAndFilter">Oil and Filter</label>
+						
+						<input type="checkbox" value="Tire Rotation" id="tireRotation" name="tireRotation" />
+						<label for="tireRotation">Tire Rotation</label>
+
+					</fieldset>
+					
+				<label for="lastOilChange">* Date of last oil change:</label>
+				<input type="text" id="lastOilChange" name="lastOilChange" data-mini="true" placeholder="CCYY-MM-DD" class="required dateISO"/>
+				
+				<label for="lastAirChange">* Date of last air filter change:</label>
+				<input type="text" id="lastAirChange" name="lastAirChange" data-mini="true"  placeholder="CCYY-MM-DD" class="required dateISO"/>
+				
+				<label for="comments">Notes:</label>
+				<textarea id="comments" name="comments" data-mini="true" placeholder="Reminders, areas of concern, etc.." ></textarea>
+				
+			</fieldset>
+			<input id="saveIt"  type="submit" value="Save Vehicle Info" data-theme="e"/>
+			<input id="resetForm"  type="reset" data-inline="true" value="Reset Form" data-theme="a"/>
+		</form>
+
+		</div>
+		
+	</div>
+	
+		<!-- JavaScript under here -->
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/json.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
