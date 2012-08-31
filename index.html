@@ -22,9 +22,12 @@
 		<meta http-equiv="cleartype" content="on" />
 	
 		<!-- StyleSheets under here -->
+		
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
+		
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel="stylesheet" href="css/themes/GoldApp.css"/>
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
+		
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 		
@@ -36,7 +39,7 @@
 	<body>
 	
 	<!--  ------------------------------------------- Intial Page ------------------------------------------------------- -->
-	<div data-role="page" id="home" data-theme="a" data-content-theme="a">
+	<div data-role="page" id="home" >
 		
 		<div data-role="header" class="header" >
 		
@@ -61,7 +64,7 @@
 					<p>Add Vehicle</p>
 				</div>
 				<div class="ui-block-c" id="featureBtn">
-					<a href="addItem.html" data-ajax="false" data-role="button" data-mini="true" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-transition="slide"></a>
+					<a href="#addItem" data-role="button" data-mini="true" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-transition="slide"></a>
 				</div>
 			</fieldset>
 
@@ -270,10 +273,129 @@
 		</div>
 	</div>
 	
+	
+	<!--  ---------------------------------------- addItem Page -------------------------------------------------- -->
+	<div data-role="page" id="addItem" data-add-back-btn="true">
+		<div id="branding">
+			<img src="images/branding.gif"/>
+		</div>
+		<div data-role="header" class="header">
+			
+			<p id="page2Header">Maintenance Tracker</p>
+			<a href="#sessionPage" id="sessionBtn" data-role="button" class="ui-btn-right" data-icon="gear" data-inline="true" data-mini="true" data-theme='a' data-transition="pop">Show Stored Data</a>
+		</div>
+		
+		<div data-role="content">
+		
+		<form id="bigForm" name="bigForm" action="#" method="post">
+			<fieldset data-role="fieldcontain">
+				<label>* Denotes a required field</label>
+				<legend>Vehicle Information</legend>
+				
+					<label for="owner">* Owner:</label>
+					<input type="text" id="owner" name="owner" data-mini="true" class="required"/>
+					
+					<div id="carMake" name="carMake">
+						<label for="allMakes">Make:</label> 
+						<select id="allMakes" name="allMakes" data-mini="true" data-native-menu="false" class="required">
+							<option value="none" data-placeholder="true" class="required">--- Select Make ---</option>
+							<option value="Chevy" class="required">Chevy</option>
+							<option value="Chrysler">Chrysler</option>
+							<option value="Ford">Ford</option>
+							<option value="Jeep">Jeep</option>
+							
+						</select> 
+					</div>
+					
+					<label for="carModel">* Model:</label>
+					<input type="text" id="carModel" name="carModel" data-mini="true" class="required"/>
+					
+					<label for="carMileage">* Approximate Mileage:</label>
+					<input type="number" id="carMileage" name="carMileage" min="30000" max="300000" step="5000" data-mini="true" class="required number"/>
+					
+					<fieldset data-role="controlgroup" data-mini="true">
+						<legend>Transmission:</legend>
+						
+							<input type="radio" checked="checked" value="Automatic" id="automatic" name="transmission" />
+							<label for="automatic">Automatic</label>
+							
+							<input type="radio" value="Manual" id="manual" name="transmission" />
+							<label for="manual">Manual</label>
+						
+					</fieldset>
+					
+					<div data-role="fieldcontain">
+						<label for="carCondition">Condition:</label>
+						<input type="range" id="carCondition" name="carCondition" value="5" min="1" max="10" data-highlight="true" data-mini="true"/>
+					</div>
+			
+			</fieldset>
+			<fieldset>
+				<legend>Maintenance</legend>
+				
+					<fieldset data-role="controlgroup" data-mini="true">
+						<legend>For which services would you like to be reminded:</legend>
+						
+						<input type="checkbox" checked="checked" value="Oil and Filter" id="oilAndFilter" name="oilAndFilter" />
+						<label for="oilAndFilter">Oil and Filter</label>
+						
+						<input type="checkbox" value="Tire Rotation" id="tireRotation" name="tireRotation" />
+						<label for="tireRotation">Tire Rotation</label>
+
+					</fieldset>
+					
+				<label for="lastOilChange">* Date of last oil change:</label>
+				<input type="text" id="lastOilChange" name="lastOilChange" data-mini="true" placeholder="CCYY-MM-DD" class="required dateISO"/>
+				
+				<label for="lastAirChange">* Date of last air filter change:</label>
+				<input type="text" id="lastAirChange" name="lastAirChange" data-mini="true"  placeholder="CCYY-MM-DD" class="required dateISO"/>
+				
+				<label for="comments">Notes:</label>
+				<textarea id="comments" name="comments" data-mini="true" placeholder="Reminders, areas of concern, etc.." ></textarea>
+				
+			</fieldset>
+			<input id="saveIt" type="submit" value="Save Vehicle Info" data-theme="e"/>
+			
+			<input id="resetForm" type="reset" data-inline="true" value="Reset Form" data-theme="a"/>
+			<input id="clearLocal" type="button" data-inline="true" value="Clear Local Storage" data-theme="a"/>
+		</form>
+
+		</div>
+		
+	</div>
+	
+	<!--  ------------------------------------------ session Page ------------------------------------------------------ -->
+	<div data-role="page" id="sessionPage" data-add-back-btn="true" >
+		<div id="branding">
+			<img src="images/branding.gif" class="ui-btn-left" />
+		</div>
+		<div data-role="header" class="header">
+			<p>Session Data</p>
+		</div>
+			
+		<div data-role="content" id="sessionContent">
+			
+			<div data-role="listview" id="sessionList"></div>
+
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="fixedFooter">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-icon="home">Home</a></li>
+					<li><a href="#thanks" data-icon="plus">Thanks</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
 		<!-- JavaScript under here -->
 		
 		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/json.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+<!--		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+-->
 	</body>
 </html>
