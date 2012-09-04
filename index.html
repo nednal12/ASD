@@ -280,24 +280,29 @@
 			<img src="images/branding.gif"/>
 		</div>
 		<div data-role="header" class="header">
+			<div id="addItemBtns">
+				<a href="#" id="sessionBtn" data-role="button" class="ui-btn-right" data-icon="gear" data-inline="true" data-mini="true" data-theme='a' data-transition="pop">Show Stored Data</a>
+			</div>
+			<br />
+			<div>
+				<p id="page2Header">Maintenance Tracker</p>
+			</div>
 			
-			<p id="page2Header">Maintenance Tracker</p>
-			<a href="#sessionPage" id="sessionBtn" data-role="button" class="ui-btn-right" data-icon="gear" data-inline="true" data-mini="true" data-theme='a' data-transition="pop">Show Stored Data</a>
 		</div>
 		
 		<div data-role="content">
 		
-		<form id="bigForm" name="bigForm" action="#" method="post">
+		<form id="bigForm" name="bigForm" action="#">
 			<fieldset data-role="fieldcontain">
 				<label>* Denotes a required field</label>
 				<legend>Vehicle Information</legend>
 				
 					<label for="owner">* Owner:</label>
-					<input type="text" id="owner" name="owner" data-mini="true" class="required"/>
+					<input type="text" id="owner" name="Owner:" data-mini="true" class="required"/>
 					
 					<div id="carMake" name="carMake">
 						<label for="allMakes">Make:</label> 
-						<select id="allMakes" name="allMakes" data-mini="true" data-native-menu="false" class="required">
+						<select id="allMakes" name="Make:" data-mini="true" data-native-menu="false" class="required">
 							<option value="none" data-placeholder="true" class="required">--- Select Make ---</option>
 							<option value="Chevy" class="required">Chevy</option>
 							<option value="Chrysler">Chrysler</option>
@@ -308,25 +313,25 @@
 					</div>
 					
 					<label for="carModel">* Model:</label>
-					<input type="text" id="carModel" name="carModel" data-mini="true" class="required"/>
+					<input type="text" id="carModel" name="Model:" data-mini="true" class="required"/>
 					
 					<label for="carMileage">* Approximate Mileage:</label>
-					<input type="number" id="carMileage" name="carMileage" min="30000" max="300000" step="5000" data-mini="true" class="required number"/>
+					<input type="number" id="carMileage" name="Mileage:" min="1000" max="300000" step="5000" data-mini="true" class="required number"/>
 					
 					<fieldset data-role="controlgroup" data-mini="true">
 						<legend>Transmission:</legend>
 						
-							<input type="radio" checked="checked" value="Automatic" id="automatic" name="transmission" />
+							<input type="radio" checked="checked" value="Automatic" id="automatic" name="Transmission:" />
 							<label for="automatic">Automatic</label>
 							
-							<input type="radio" value="Manual" id="manual" name="transmission" />
+							<input type="radio" value="Manual" id="manual" name="Transmission:" />
 							<label for="manual">Manual</label>
 						
 					</fieldset>
 					
 					<div data-role="fieldcontain">
 						<label for="carCondition">Condition:</label>
-						<input type="range" id="carCondition" name="carCondition" value="5" min="1" max="10" data-highlight="true" data-mini="true"/>
+						<input type="range" id="carCondition" name="Condition:" value="5" min="1" max="10" data-highlight="true" data-mini="true"/>
 					</div>
 			
 			</fieldset>
@@ -336,22 +341,22 @@
 					<fieldset data-role="controlgroup" data-mini="true">
 						<legend>For which services would you like to be reminded:</legend>
 						
-						<input type="checkbox" checked="checked" value="Oil and Filter" id="oilAndFilter" name="oilAndFilter" />
+						<input type="checkbox" checked="checked" value="Oil and Filter" id="oilAndFilter" name="Oil and Filter:" />
 						<label for="oilAndFilter">Oil and Filter</label>
 						
-						<input type="checkbox" value="Tire Rotation" id="tireRotation" name="tireRotation" />
+						<input type="checkbox" value="Tire Rotation" id="tireRotation" name="Tire Rotation:" />
 						<label for="tireRotation">Tire Rotation</label>
 
 					</fieldset>
 					
 				<label for="lastOilChange">* Date of last oil change:</label>
-				<input type="text" id="lastOilChange" name="lastOilChange" data-mini="true" placeholder="CCYY-MM-DD" class="required dateISO"/>
+				<input type="text" id="lastOilChange" name="Date of Oil Change:" data-mini="true" placeholder="CCYY-MM-DD" class="required dateISO"/>
 				
 				<label for="lastAirChange">* Date of last air filter change:</label>
-				<input type="text" id="lastAirChange" name="lastAirChange" data-mini="true"  placeholder="CCYY-MM-DD" class="required dateISO"/>
+				<input type="text" id="lastAirChange" name="Date of Air Filter Change:" data-mini="true"  placeholder="CCYY-MM-DD" class="required dateISO"/>
 				
 				<label for="comments">Notes:</label>
-				<textarea id="comments" name="comments" data-mini="true" placeholder="Reminders, areas of concern, etc.." ></textarea>
+				<textarea id="comments" name="Comments:" data-mini="true" placeholder="Reminders, areas of concern, etc.." ></textarea>
 				
 			</fieldset>
 			<input id="saveIt" type="submit" value="Save Vehicle Info" data-theme="e"/>
@@ -375,7 +380,32 @@
 			
 		<div data-role="content" id="sessionContent">
 			
-			<div data-role="listview" id="sessionList"></div>
+			<ul data-role="listview" id="sessionList"></ul>
+
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="fixedFooter">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-icon="home">Home</a></li>
+					<li><a href="#thanks" data-icon="plus">Thanks</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!--  ------------------------------------------ editEntry Page ------------------------------------------------------ -->
+	<div data-role="page" id="editEntry" data-add-back-btn="true" >
+		<div id="branding">
+			<img src="images/branding.gif" class="ui-btn-left" />
+		</div>
+		<div data-role="header" class="header">
+			<p>Edit Entry</p>
+		</div>
+			
+		<div data-role="content" id="editContent">
+			
+			<ul data-role="listview" id="editList"></ul>
 
 		</div>
 		

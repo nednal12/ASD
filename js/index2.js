@@ -81,6 +81,7 @@ $('#addItem').on('pageinit', function(){
 		
 		submitHandler: function() {
 		var data = myForm.serializeArray();
+		alert(data);
 		logFormData(data);
 		storeData(data);
 		}
@@ -90,39 +91,63 @@ $('#addItem').on('pageinit', function(){
 	//any other code needed for addItem page goes here
 	
 	$("#clearLocal").on('click', clearLocal);
+	$("#sessionBtn").on('click', showPage);
 	
 });
 
 // ----------------------------------- session Page -----------------------------------
 $('#sessionPage').on('pageinit', function(){
-		
-		if (localStorage.length < 1) {
+/*		
+		if (localStorage.length === 0) {
 			alert("There is no data to display. Default data was added.");
 			autoPopulate();
 		}
-			
+*/		
+		$("#sessionList").empty();
 		//Cycle thru the JSON data and create the listview
+		
 		for (var i=0, j=localStorage.length, k=i+1; i<j; i++, k++) {
 			var key = localStorage.key(i),
 				value = localStorage.getItem(key),
 				obj = JSON.parse(value);
 				
 			$("<li>Item " + k + "</li>").attr({
-				id: "id" + localStorage.key(i)
+				id: "mainLi" + key
 			}).appendTo("#sessionList");
 			
+			$("<ul></ul>").attr({
+				id: 'subUl' + key
+			}).appendTo('#mainLi' + key);
+
 			for (var n in obj) {
 				
-				$("<div>" + obj[n][0]+" "+obj[n][1] + "</div>").appendTo("#id" + localStorage.key(i));
+				$("<li>" + obj[n]["name"] +" "+ obj[n]["value"] + "</li>").appendTo("#subUl" + key);
 				
 			}
+			$('<li><input type="button" data-inline="true" id="edit' + key + '" name="' + key + '"value="Edit Entry" /><input type="button" data-inline="true" id="delete' + key + '" name="' + key + '" value="Delete Entry" /></li>' ).appendTo('#subUl' + key);
+	//		$('<li><a type="button" data-inline="true" href="#editEntry" id="edit' + key + '"value="Edit Entry">Edit Entry</a></li>' ).appendTo('#subUl' + key);
 			
 		}
-		$('#sessionList').listview('refresh');
-		
+	
+	$("input[id^=delete]").on('click', deleteEntry);
+	$("input[id^=edit]").on('click', editEntry);
+	
 });	
 
 //The functions below can go inside or outside the pageinit function for the page in which it is needed.
+function deleteEntry() {
+		var ask = confirm("Are you sure you want to delete this vehicle?");
+		if (ask){
+			alert(this.name);
+			localStorage.removeItem(this.name);
+			$("#sessionPage").trigger('pageinit');
+			$.mobile.changePage($("#sessionPage"));
+		}
+		else {
+			alert("The vehicle was not deleted.");
+		}
+	}
+
 
 var logFormData = function(data){
 	// Write all form data to the console in order to view the objects
@@ -161,6 +186,12 @@ function autoPopulate(){
 	for(var n in json) {
 		var id = localStorage.length;
 		localStorage.setItem(id, JSON.stringify(json[n]));
+		
 	}
-}
+	return false;
+};
 
+var showPage = function(){
+	$("#sessionPage").trigger('pageinit');
+	$.mobile.changePage($("#sessionPage"));
+}
