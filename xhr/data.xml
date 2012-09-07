@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<items>
+    <item>
+        <owner>Brent XML</owner>
+        <make>Ford</make>
+        <model>Explorer</model>
+        <mileage>50000</mileage>
+        <transmission>Manual</transmission>
+        <condition>2</condition>
+        <oilCB>null</oilCB>
+        <tireRotationCB>Checked</tireRotationCB>
+        <oilChange>2012-01-01</oilChange>
+        <airChange>2012-01-01</airChange>
+        <notes>none</notes>
+    </item>
+    <item>
+        <owner>Steph XML</owner>
+        <make>Chevy</make>
+        <model>Silverado</model>
+        <mileage>55000</mileage>
+        <transmission>Automatic</transmission>
+        <condition>10</condition>
+        <oilCB>Checked</oilCB>
+        <tireRotationCB>Checked</tireRotationCB>
+        <oilChange>2012-02-01</oilChange>
+        <airChange>2012-02-01</airChange>
+        <notes>Love this truck.</notes>
+    </item>
+    <item>
+        <owner>Linda XML</owner>
+        <make>Nissan</make>
+        <model>Titan</model>
+        <mileage>60000</mileage>
+        <transmission>Automatic</transmission>
+        <condition>7</condition>
+        <oilCB>Checked</oilCB>
+        <tireRotationCB>null</tireRotationCB>
+        <oilChange>2012-03-01</oilChange>
+        <airChange>2012-03-01</airChange>
+        <notes>Nothing beats a Titan.</notes>
+    </item>
+    <item>
+        <owner>Ed XML</owner>
+        <make>Hyundai</make>
+        <model>Sonata</model>
+        <mileage>65000</mileage>
+        <transmission>Manual</transmission>
+        <condition>9</condition>
+        <oilCB>null</oilCB>
+        <tireRotationCB>null</tireRotationCB>
+        <oilChange>2012-04-01</oilChange>
+        <airChange>2012-04-01</airChange>
+        <notes>Best warranty ever.</notes>
+    </item>
+    <item>
+        <owner>Michael XML</owner>
+        <make>Pontiac</make>
+        <model>Firebird</model>
+        <mileage>70000</mileage>
+        <transmission>Manual</transmission>
+        <condition>3</condition>
+        <oilCB>Checked</oilCB>
+        <tireRotationCB>Checked</tireRotationCB>
+        <oilChange>2012-05-01</oilChange>
+        <airChange>2012-05-01</airChange>
+        <notes>Wouldn't trade it for the world.</notes>
+    </item>
+</items>

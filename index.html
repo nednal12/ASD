@@ -27,10 +27,6 @@
 		
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel="stylesheet" href="css/themes/GoldApp.css"/>
-		
-		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
-		
 	
 		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 		<script src="js/libs/modernizr.custom.min.js"></script>
@@ -100,6 +96,34 @@
 				 
 			</ul>
 		</div>
+		
+		<ul data-role="listview" data-inset="true">
+				 
+				 <li data-role="list-divider">
+				 	<h3>AJAX Data</h3>
+				 </li>
+				 
+				 <li>
+				 	<a href="#jsonData" id="jsonBtn" data-transition="slide">
+				 		<h3>JSON</h3>
+				 	</a>
+				 </li>
+				 
+				 <li>
+				 	<a href="#xmlData" id="xmlBtn" data-transition="slide">
+				 		<h3>XML</h3>
+				 	</a>
+				 </li>
+				 
+				 <li>
+				 	<a href="#wddxData" id="wddxBtn" data-transition="slide">
+				 		<h3>WDDX</h3>
+				 	</a>
+				 </li>
+				 
+			</ul>
+		</div>
+		
 		
 		<div data-role="footer" data-position="fixed" data-id="fixedFooter">
 			<div data-role="navbar">
@@ -419,13 +443,90 @@
 		</div>
 	</div>
 	
+	<!--  ------------------------------------------ ajaxData Page ------------------------------------------------------ -->
+	<div data-role="page" id="jsonData" data-add-back-btn="true" >
+		<div id="branding">
+			<img src="images/branding.gif" class="ui-btn-left" />
+		</div>
+		<div data-role="header" class="header">
+			<p>Ajax Data</p>
+		</div>
+			
+		<div data-role="content" id="displayData">
+			
+			
+
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="fixedFooter">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-icon="home">Home</a></li>
+					<li><a href="#thanks" data-icon="plus">Thanks</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<!--  ------------------------------------------ xmlData Page ------------------------------------------------------ -->
+	<div data-role="page" id="xmlData" data-add-back-btn="true" >
+		<div id="branding">
+			<img src="images/branding.gif" class="ui-btn-left" />
+		</div>
+		<div data-role="header" class="header">
+			<p>XML Data</p>
+		</div>
+			
+		<div data-role="content" id="displayXMLData">
+			
+			
+
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="fixedFooter">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-icon="home">Home</a></li>
+					<li><a href="#thanks" data-icon="plus">Thanks</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>	
+
+
+	<!--  ------------------------------------------ wddxData Page ------------------------------------------------------ -->
+	<div data-role="page" id="wddxData" data-add-back-btn="true" >
+		<div id="branding">
+			<img src="images/branding.gif" class="ui-btn-left" />
+		</div>
+		<div data-role="header" class="header">
+			<p>WDDX Data</p>
+		</div>
+			
+		<div data-role="content" id="displayWDDXData">
+			
+			
+
+		</div>
+		
+		<div data-role="footer" data-position="fixed" data-id="fixedFooter">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-icon="home">Home</a></li>
+					<li><a href="#thanks" data-icon="plus">Thanks</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>	
+
+</body>
 		<!-- JavaScript under here -->
+		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
 		
 		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/json.js"></script>
-		<script type="text/javascript" src="js/index2.js"></script>
-<!--		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
--->
-	</body>
+		
+		<script type="text/javascript" src="js/index.js"></script>
+	
 </html>

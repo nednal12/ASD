@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wddxPacket version="1.0">
+	<data>
+    	<struct>
+        	<var name="Owner: ">
+        		<string>Brent WDDX</string>
+        	</var>
+        	<var name="Make: ">
+        		<string>Ford</string>
+        	</var>
+        	<var name="Model: ">
+        		<string>Explorer</string>
+        	</var>
+        	<var name="Mileage: ">
+        		<string>50000</string>
+        	</var>
+        	<var name="Transmission: ">
+        		<string>Manual</string>
+        	</var>
+        	<var name="Condition: ">
+        		<string>2</string>
+        	</var>
+        	<var name="Oil and Filter: ">
+        		<string>null</string>
+        	</var>
+        	<var name="Tire Rotation: ">
+        		<string>Checked</string>
+        	</var>
+        	<var name="Last Oil Change: ">
+        		<string>2012-01-01</string>
+        	</var>
+        	<var name="Last Air Filter Change: ">
+        		<string>2012-01-01</string>
+        	</var>
+        	<var name="Notes: ">
+        		<string>none</string>
+        	</var>
+    	</struct>
+    	<struct>
+        	<var name="Owner: ">
+        		<string>Steph WDDX</string>
+        	</var>
+        	<var name="Make: ">
+        		<string>Chevy</string>
+        	</var>
+        	<var name="Model: ">
+        		<string>Silverado</string>
+        	</var>
+        	<var name="Mileage: ">
+        		<string>55000</string>
+        	</var>
+        	<var name="Transmission: ">
+        		<string>Automatic</string>
+        	</var>
+        	<var name="Condition: ">
+        		<string>10</string>
+        	</var>
+        	<var name="Oil and Filter: ">
+        		<string>Checked</string>
+        	</var>
+        	<var name="Tire Rotation: ">
+        		<string>Checked</string>
+        	</var>
+        	<var name="Last Oil Change: ">
+        		<string>2012-02-01</string>
+        	</var>
+        	<var name="Last Air Filter Change: ">
+        		<string>2012-02-01</string>
+        	</var>
+        	<var name="Notes: ">
+        		<string>Love this truck.</string>
+        	</var>
+    	</struct>
+    	<struct>
+        	<var name="Owner: ">
+        		<string>Linda WDDX</string>
+        	</var>
+        	<var name="Make: ">
+        		<string>Nissan</string>
+        	</var>
+        	<var name="Model: ">
+        		<string>Titan</string>
+        	</var>
+        	<var name="Mileage: ">
+        		<string>60000</string>
+        	</var>
+        	<var name="Transmission: ">
+        		<string>Automatic</string>
+        	</var>
+        	<var name="Condition: ">
+        		<string>7</string>
+        	</var>
+        	<var name="Oil and Filter: ">
+        		<string>Checked</string>
+        	</var>
+        	<var name="Tire Rotation: ">
+        		<string>null</string>
+        	</var>
+        	<var name="Last Oil Change: ">
+        		<string>2012-03-01</string>
+        	</var>
+        	<var name="Last Air Filter Change: ">
+        		<string>2012-03-01</string>
+        	</var>
+        	<var name="Notes: ">
+        		<string>Nothing beats a Titan.</string>
+        	</var>
+    	</struct>
+    	<struct>
+        	<var name="Owner: ">
+        		<string>Ed WDDX</string>
+        	</var>
+        	<var name="Make: ">
+        		<string>Hyundai</string>
+        	</var>
+        	<var name="Model: ">
+        		<string>Sonato</string>
+        	</var>
+        	<var name="Mileage: ">
+        		<string>65000</string>
+        	</var>
+        	<var name="Transmission: ">
+        		<string>Manual</string>
+        	</var>
+        	<var name="Condition: ">
+        		<string>9</string>
+        	</var>
+        	<var name="Oil and Filter: ">
+        		<string>null</string>
+        	</var>
+        	<var name="Tire Rotation: ">
+        		<string>null</string>
+        	</var>
+        	<var name="Last Oil Change: ">
+        		<string>2012-04-01</string>
+        	</var>
+        	<var name="Last Air Filter Change: ">
+        		<string>2012-04-01</string>
+        	</var>
+        	<var name="Notes: ">
+        		<string>Best warranty ever.</string>
+        	</var>
+    	</struct>
+    	<struct>
+        	<var name="Owner: ">
+        		<string>Michael WDDX</string>
+        	</var>
+        	<var name="Make: ">
+        		<string>Pontiac</string>
+        	</var>
+        	<var name="Model: ">
+        		<string>Firebird</string>
+        	</var>
+        	<var name="Mileage: ">
+        		<string>70000</string>
+        	</var>
+        	<var name="Transmission: ">
+        		<string>Manual</string>
+        	</var>
+        	<var name="Condition: ">
+        		<string>3</string>
+        	</var>
+        	<var name="Oil and Filter: ">
+        		<string>Checked</string>
+        	</var>
+        	<var name="Tire Rotation: ">
+        		<string>Checked</string>
+        	</var>
+        	<var name="Last Oil Change: ">
+        		<string>2012-05-01</string>
+        	</var>
+        	<var name="Last Air Filter Change: ">
+        		<string>2012-05-01</string>
+        	</var>
+        	<var name="Notes: ">
+        		<string>Wouldn't trade it for the world.</string>
+        	</var>
+    	</struct>
+    </data>
+</wddxPacket>
